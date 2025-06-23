@@ -2,12 +2,12 @@
 
 Console.WriteLine("Anti-idle started");
 while (true) {
-    Console.WriteLine($"Anti-idle activated at {TimeOnly.FromDateTime(DateTime.Now)} ");
     GetCursorPos(out POINT pos);
     SetCursorPos(pos.X + 1, pos.Y);
     Thread.Sleep(100);
     SetCursorPos(pos.X, pos.Y);
     Thread.Sleep(3*60*1000);
+    Console.WriteLine($"Anti-idle activated at {TimeOnly.FromDateTime(DateTime.Now)} ");
 }
 
 [DllImport("user32.dll")]
